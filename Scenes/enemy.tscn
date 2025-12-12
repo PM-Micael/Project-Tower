@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bugp3xft5dakl"]
+
+[ext_resource type="Script" uid="uid://d2mr4jbubdart" path="res://Scripts/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://6fef76odsir0" path="res://Assets/dynamite.png" id="2_1f0kj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
+size = Vector2(127, 127)
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy Unit"]]
+script = ExtResource("1_1f0kj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_wtcfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(6.92, 5.36)
+texture = ExtResource("2_1f0kj")

@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://0iqkb04oacik"]
+
+[ext_resource type="PackedScene" uid="uid://djkssdnxpx331" path="res://Scenes/Structures/core.tscn" id="1_0hol4"]
+[ext_resource type="PackedScene" uid="uid://bugp3xft5dakl" path="res://Scenes/enemy.tscn" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://ct5mcwjrs6h4h" path="res://Scripts/enemy_spawn.gd" id="3_epypp"]
+[ext_resource type="PackedScene" uid="uid://b0k3abpx5lwt7" path="res://Scenes/Structures/turret.tscn" id="4_kdubu"]
+[ext_resource type="Script" uid="uid://csctngf5o2avw" path="res://Scripts/health_label.gd" id="4_q6r6c"]
+
+[node name="Game" type="Node2D"]
+
+[node name="DefendTower" type="Node2D" parent="."]
+
+[node name="EnemySpawn" type="Node2D" parent="DefendTower"]
+position = Vector2(-1063, 1)
+script = ExtResource("3_epypp")
+enemy_scene = ExtResource("2_0e48y")
+
+[node name="Fort" type="Node2D" parent="DefendTower"]
+
+[node name="Core" parent="DefendTower/Fort" instance=ExtResource("1_0hol4")]
+
+[node name="Turret" parent="DefendTower/Fort" node_paths=PackedStringArray("core_scene") instance=ExtResource("4_kdubu")]
+position = Vector2(-472, -327)
+core_scene = NodePath("../Core")
+
+[node name="Turret2" parent="DefendTower/Fort" node_paths=PackedStringArray("core_scene") instance=ExtResource("4_kdubu")]
+position = Vector2(-932, 292)
+core_scene = NodePath("../Core")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="HUD" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthLabel" type="Label" parent="Camera2D/HUD"]
+layout_mode = 0
+offset_left = -1144.0
+offset_top = -642.0
+offset_right = -763.0
+offset_bottom = -505.0
+theme_override_font_sizes/font_size = 100
+text = "100/100"
+script = ExtResource("4_q6r6c")
