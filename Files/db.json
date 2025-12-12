@@ -1,0 +1,22 @@
+{
+	"users": {
+		"UID_123": {
+			"progress":{
+				"current_round": {
+					"wave": 1,
+					"fort":{
+						"core_stats": {
+							"maximum_health": 100,
+							"current_health": 90,
+							"attack_cooldown": 1.0
+						}
+					}
+				},
+				"core": {
+					"base_health": 100
+				}
+			},
+			"settings":{}
+		}
+	}
+}

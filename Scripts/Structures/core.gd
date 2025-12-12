@@ -12,7 +12,8 @@ signal health_changed (current, maximum)
 func _init() -> void:
 	var data = Global.load_json("res://Files/test.json")
 	if data:
-		current_health = data["users"]["UID_123"]["progress"]["current_round"]["core_stats"]["current_health"]
+		current_health = data["users"]["UID_123"]["progress"]["current_round"]["fort"]["core_stats"]["current_health"]
+		maximum_health = data["users"]["UID_123"]["progress"]["current_round"]["fort"]["core_stats"]["maximum_health"]
 		print(str(current_health))
 
 func take_damage(amount: int) -> void:

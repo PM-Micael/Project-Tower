@@ -1,0 +1,2 @@
+- Eneemies collide with tower (keep?)
+- Add walls connecting the towers
