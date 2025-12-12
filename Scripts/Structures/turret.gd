@@ -74,6 +74,9 @@ func _shoot() -> void:
 		_target = null
 		return
 	
+	if _target.predicted_current_health <= 0:
+		return
+	
 	var bullet = bullet_scene.instantiate()
 	
 	bullet.global_position = global_position

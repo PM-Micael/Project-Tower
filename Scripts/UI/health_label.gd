@@ -4,7 +4,7 @@ extends Label
 
 func _ready() -> void:
 	core.connect("health_changed", Callable(self, "_on_health_changed"))
-	text = "100/100"
+	_on_health_changed(core.current_health, core.maximum_health)
 
 func _on_health_changed(current, maximum):
 	if core:
