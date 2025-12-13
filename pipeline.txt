@@ -1,2 +1,3 @@
 - Eneemies collide with tower (keep?)
 - Add walls connecting the towers
+- Debug messages are being spammed when nor enemy is in range

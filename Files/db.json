@@ -5,6 +5,7 @@
 				"current_round": {
 					"wave": 1,
 					"fort":{
+						"tier": 2,
 						"core_stats": {
 							"maximum_health": 100,
 							"current_health": 90,

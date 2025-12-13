@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://0iqkb04oacik"]
+[gd_scene load_steps=5 format=3 uid="uid://0iqkb04oacik"]
 
 [ext_resource type="Script" uid="uid://ct5mcwjrs6h4h" path="res://Scripts/Structures/enemy_spawn.gd" id="1_kldst"]
 [ext_resource type="PackedScene" uid="uid://bugp3xft5dakl" path="res://Scenes/Enemies/enemy.tscn" id="2_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://djkssdnxpx331" path="res://Scenes/Structures/core.tscn" id="3_7lihs"]
-[ext_resource type="PackedScene" uid="uid://b0k3abpx5lwt7" path="res://Scenes/Structures/turret.tscn" id="4_b2bpf"]
 [ext_resource type="Script" uid="uid://csctngf5o2avw" path="res://Scripts/UI/health_label.gd" id="4_fgofq"]
 
 [node name="Game" type="Node2D"]
@@ -18,30 +17,6 @@ enemy_scene = ExtResource("2_b2bpf")
 [node name="Fort" type="Node2D" parent="DefendTower"]
 
 [node name="Core" parent="DefendTower/Fort" instance=ExtResource("3_7lihs")]
-
-[node name="Turret" parent="DefendTower/Fort" node_paths=PackedStringArray("core_scene") instance=ExtResource("4_b2bpf")]
-position = Vector2(200, 0)
-core_scene = NodePath("../Core")
-
-[node name="Turret2" parent="DefendTower/Fort" node_paths=PackedStringArray("core_scene") instance=ExtResource("4_b2bpf")]
-position = Vector2(100, -173.2)
-core_scene = NodePath("../Core")
-
-[node name="Turret3" parent="DefendTower/Fort" node_paths=PackedStringArray("core_scene") instance=ExtResource("4_b2bpf")]
-position = Vector2(-100, -173.2)
-core_scene = NodePath("../Core")
-
-[node name="Turret4" parent="DefendTower/Fort" node_paths=PackedStringArray("core_scene") instance=ExtResource("4_b2bpf")]
-position = Vector2(-200, 0)
-core_scene = NodePath("../Core")
-
-[node name="Turret5" parent="DefendTower/Fort" node_paths=PackedStringArray("core_scene") instance=ExtResource("4_b2bpf")]
-position = Vector2(-100, 173.2)
-core_scene = NodePath("../Core")
-
-[node name="Turret6" parent="DefendTower/Fort" node_paths=PackedStringArray("core_scene") instance=ExtResource("4_b2bpf")]
-position = Vector2(100, 173.2)
-core_scene = NodePath("../Core")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)

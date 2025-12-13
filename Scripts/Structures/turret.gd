@@ -42,7 +42,6 @@ func _set_closest_core_target() -> void:
 	)
 	
 	if enemies.size() == 0:
-		push_warning("No tower found in group 'tower'")
 		return
 	
 	var closest: Node2D = enemies[0]
@@ -81,5 +80,6 @@ func _shoot() -> void:
 	
 	bullet.global_position = global_position
 	bullet.target = _target
-	get_parent().add_child(bullet)
+	bullet.name = "Bullet"
+	get_parent().get_parent().add_child(bullet)
 	_target.predicted_current_health -= bullet.damage

@@ -9,6 +9,7 @@ size = Vector2(127, 127)
 
 [node name="Core" type="Area2D" groups=["Core", "Fort"]]
 script = ExtResource("1_wtb72")
+canon_scene = ExtResource("3_8rc0j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wtcfe")
