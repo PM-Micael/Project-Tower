@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var attack_cooldown: float = 1.0
 @export var bullet_scene: PackedScene
 @export var core_scene: Area2D
+@onready var fort_scene = get_parent().get_parent()
 
 var _time_since_last_attack: float = 0
 var _target : Node2D = null
@@ -81,5 +82,6 @@ func _shoot() -> void:
 	bullet.global_position = global_position
 	bullet.target = _target
 	bullet.name = "Bullet"
-	get_parent().get_parent().add_child(bullet)
+	fort_scene.spawn_bullet(bullet)
+	
 	_target.predicted_current_health -= bullet.damage

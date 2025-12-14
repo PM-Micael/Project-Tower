@@ -1,3 +1,11 @@
 - Eneemies collide with tower (keep?)
 - Add walls connecting the towers
-- Debug messages are being spammed when nor enemy is in range
+
+2025-12-13
+	- Refactor so that it is the fort that spawns all the turrets, core, etc
+	
+	Question:
+			- Do I want to spawn in turrets during scene runtime or just upgrade them?
+
+2025-12-14
+	- Decide on casing for functions. With an underscore at the start or not

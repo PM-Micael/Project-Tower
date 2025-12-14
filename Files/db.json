@@ -2,6 +2,9 @@
 	"users": {
 		"UID_123": {
 			"progress":{
+				"fort":{
+					"tier": 2
+				},
 				"current_round": {
 					"wave": 1,
 					"fort":{
@@ -13,9 +16,6 @@
 						}
 					}
 				},
-				"core": {
-					"base_health": 100
-				}
 			},
 			"settings":{}
 		}

@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://6fef76odsir0" path="res://Assets/dynamite.png" id="2_1f0kj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
-size = Vector2(127, 127)
+size = Vector2(70, 68)
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy Unit"]]
 script = ExtResource("1_1f0kj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_wtcfe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(6.92, 5.36)
+scale = Vector2(4, 3.098)
 texture = ExtResource("2_1f0kj")
