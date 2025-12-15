@@ -1,24 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://0iqkb04oacik"]
+[gd_scene load_steps=8 format=3 uid="uid://0iqkb04oacik"]
 
 [ext_resource type="Script" uid="uid://ct5mcwjrs6h4h" path="res://Scripts/Structures/enemy_spawn.gd" id="1_kldst"]
 [ext_resource type="PackedScene" uid="uid://bugp3xft5dakl" path="res://Scenes/Enemies/enemy.tscn" id="2_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://djkssdnxpx331" path="res://Scenes/Structures/core.tscn" id="3_7lihs"]
 [ext_resource type="Script" uid="uid://bd5vnub00s8ra" path="res://Scripts/Structures/fort.gd" id="3_b2bpf"]
-[ext_resource type="PackedScene" uid="uid://b0k3abpx5lwt7" path="res://Scenes/Structures/turret.tscn" id="4_7lihs"]
+[ext_resource type="PackedScene" uid="uid://b0k3abpx5lwt7" path="res://Scenes/Structures/canon.tscn" id="4_7lihs"]
 [ext_resource type="Script" uid="uid://csctngf5o2avw" path="res://Scripts/UI/health_label.gd" id="4_fgofq"]
+[ext_resource type="PackedScene" uid="uid://ddkv70duynxc" path="res://Scenes/Structures/wall.tscn" id="6_fgofq"]
 
 [node name="Game" type="Node2D"]
 
 [node name="DefendTower" type="Node2D" parent="."]
 
 [node name="EnemySpawn" type="Node2D" parent="DefendTower"]
-position = Vector2(-1130, -603)
+position = Vector2(-437, -407)
 script = ExtResource("1_kldst")
 enemy_scene = ExtResource("2_b2bpf")
 
 [node name="Fort" type="Node2D" parent="DefendTower"]
 script = ExtResource("3_b2bpf")
 canon_scene = ExtResource("4_7lihs")
+wall_scene = ExtResource("6_fgofq")
 
 [node name="Core" parent="DefendTower/Fort" instance=ExtResource("3_7lihs")]
 

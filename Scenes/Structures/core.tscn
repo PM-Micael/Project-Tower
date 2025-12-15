@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwnl81vwcteav" path="res://Scripts/Structures/core.gd" id="1_wtb72"]
 [ext_resource type="Texture2D" uid="uid://dj0h3dx0mhnxu" path="res://Assets/icon.svg" id="2_lstiq"]
-[ext_resource type="PackedScene" uid="uid://b0k3abpx5lwt7" path="res://Scenes/Structures/turret.tscn" id="3_8rc0j"]
+[ext_resource type="PackedScene" uid="uid://b0k3abpx5lwt7" path="res://Scenes/Structures/canon.tscn" id="3_8rc0j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
 size = Vector2(127, 127)

@@ -9,3 +9,12 @@
 
 2025-12-14
 	- Decide on casing for functions. With an underscore at the start or not
+	- Find an easy way to mach up the ColorRect and CollisionShape in their transform
+	Notes
+		- Tower tiers will work in layers and start with 3 walls
+		- Player can set a "watchpoint" to somewhat control where the canons will shoot.
+		
+2025-12-15
+	- Update the canon_slot_cords in the json file
+	Notes
+		- Skins would be cool.
