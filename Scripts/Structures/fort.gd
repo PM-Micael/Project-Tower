@@ -4,6 +4,8 @@ extends Node2D
 @export var wall_scene: PackedScene
 @onready var core_scene: Area2D = $Core
 @onready var structures_node: Node2D = $Structures
+@onready var walls_node: Node2D = structures_node.get_node("Walls")
+@onready var canons_node: Node2D = structures_node.get_node("Canons")
 @onready var bullets_node: Node2D = $Bullets
 
 var _tier_number: int
@@ -49,7 +51,7 @@ func _spawn_walls():
 		
 		wall.transform = t
 		wall.name = "wall_%d" % i
-		structures_node.add_child(wall)
+		walls_node.add_child(wall)
 
 func _spawn_canons():
 	if canon_scene == null || _canon_slot_cords == null || _canon_slot_cords.size() == 0:
@@ -66,7 +68,7 @@ func _spawn_canons():
 		
 		canon.name = slot_name
 		canon.core_scene = core_scene
-		structures_node.add_child(canon)
+		canons_node.add_child(canon)
 
 func spawn_bullet(bullet: Node2D):
 	bullets_node.add_child(bullet)

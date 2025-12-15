@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var attack_cooldown: float = 1.0
 @export var bullet_scene: PackedScene
 @export var core_scene: Area2D
-@onready var fort_scene = get_parent().get_parent()
+@onready var fort_scene = get_tree().get_root().get_node("Game/DefendTower/Fort")
 
 var _time_since_last_attack: float = 0
 var _target : Node2D = null

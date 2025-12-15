@@ -1,15 +1,11 @@
 - Eneemies collide with tower (keep?)
 - Add walls connecting the towers
 
-2025-12-13
-	- Refactor so that it is the fort that spawns all the turrets, core, etc
-	
+2025-12-13	
 	Question:
 			- Do I want to spawn in turrets during scene runtime or just upgrade them?
 
 2025-12-14
-	- Decide on casing for functions. With an underscore at the start or not
-	- Find an easy way to mach up the ColorRect and CollisionShape in their transform
 	Notes
 		- Tower tiers will work in layers and start with 3 walls
 		- Player can set a "watchpoint" to somewhat control where the canons will shoot.

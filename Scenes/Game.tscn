@@ -26,6 +26,10 @@ wall_scene = ExtResource("6_fgofq")
 
 [node name="Structures" type="Node2D" parent="DefendTower/Fort"]
 
+[node name="Walls" type="Node2D" parent="DefendTower/Fort/Structures"]
+
+[node name="Canons" type="Node2D" parent="DefendTower/Fort/Structures"]
+
 [node name="Bullets" type="Node2D" parent="DefendTower/Fort"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
