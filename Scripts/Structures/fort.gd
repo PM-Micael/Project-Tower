@@ -11,7 +11,6 @@ extends Node2D
 var _tier_number: int
 var _canon_slot_cords: Dictionary
 
-var _wall_slot_positions: Dictionary
 var _wall_transforms: Array[Transform2D]
 
 func _init() -> void:	
@@ -39,7 +38,6 @@ func _set_properties():
 			var rot = deg_to_rad(transform_dict["rotation"]) # Transform2D uses radians
 			var t = Transform2D(rot, pos)
 			_wall_transforms.append(t)
-			print("Loaded wall slot '%s': position=%s, rotation=%f radians" % [slot_name, pos, rot])
 
 func _spawn_walls():
 	if wall_scene == null || _wall_transforms == null || _wall_transforms.size() == 0:

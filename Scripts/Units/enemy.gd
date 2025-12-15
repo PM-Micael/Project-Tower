@@ -1,8 +1,14 @@
 extends CharacterBody2D
 
-@export var maximum_health: int = 20
-@export var current_health: int
-@export var predicted_current_health: int
+@export var base_health: int = 1
+@export var maximum_health: int
+@onready var current_health: int = maximum_health
+@onready var predicted_current_health: int = current_health
+
+@export var base_attack: int = 1
+@export var maximum_attack: int
+@onready var current_attack: int = maximum_attack
+
 @export var speed: float = 200.0
 @export var stop_distance: float = 140.0
 @export var attack_cooldown: float = 1.0
@@ -11,8 +17,6 @@ var _target: Node2D = null
 var _time_since_last_attack: float = 0.0
 
 func _ready() -> void:
-	current_health = maximum_health
-	predicted_current_health = current_health
 	_ready_target()
 
 func _ready_target() -> void:
@@ -52,6 +56,10 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		_handle_attack(delta)
 
+func set_stats(health_multiplier: int, max_multiplier: int):
+	maximum_health = base_health * health_multiplier
+	maximum_attack = base_attack * max_multiplier
+
 func _handle_attack(delta: float) -> void:
 	if _time_since_last_attack > 0.0:
 		_time_since_last_attack -= delta
@@ -63,7 +71,6 @@ func _handle_attack(delta: float) -> void:
 func _do_attack() -> void:
 	if _target and _target.has_method("take_damage"):
 		_target.call("take_damage", 1)
-		
 
 func take_damage(amount: int) -> void:
 	current_health -= amount

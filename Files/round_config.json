@@ -1,0 +1,14 @@
+{
+	"tier_1": {
+		"wave_multipliers": {
+			"health_multiplier": 2,
+			"attack_multiplier": 2
+		}
+	},
+	"tier_2": {
+		"wave_multipliers": {
+			"health_multiplier": 4,
+			"attack_multiplier": 4
+		}
+	}
+}
