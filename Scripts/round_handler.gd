@@ -4,11 +4,17 @@ extends Node2D
 @export var prep_phase_duration: float = 5.0
 @export var round_tier: int = 2 # Placeholder
 
+var current_wave: int = 1 # Placeholder
 var wave_countdown: float = wave_duration
 var prep_phase_countdown: float = prep_phase_duration
 var in_prep_phase: bool
 
 signal timer_update (title, count)
+signal wave_update (count)
+
+func _ready() -> void:
+	await get_tree().process_frame # Bandade solution ?
+	emit_signal("wave_update", current_wave)
 
 func _physics_process(delta: float) -> void:
 	_counter(delta)
@@ -35,5 +41,7 @@ func _counter(delta: float):
 		else:
 			prep_phase_countdown = prep_phase_duration
 			in_prep_phase = false
+			current_wave += 1
+			emit_signal("wave_update", current_wave)
 	
 	emit_signal("timer_update", title, counter)

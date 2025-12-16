@@ -13,6 +13,8 @@
 2025-12-15
 	- Make waves and spawning work properly
 	- Investigate the delay in canons shoting when round starts
+	- Display current tier and round on the UI
+	- Incriment wave count after each preperation stage
 	
 	Notes
 		- Skins would be cool.
