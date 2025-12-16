@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://0iqkb04oacik"]
+[gd_scene load_steps=12 format=3 uid="uid://0iqkb04oacik"]
 
 [ext_resource type="Script" uid="uid://ct5mcwjrs6h4h" path="res://Scripts/Structures/enemy_spawn.gd" id="1_kldst"]
 [ext_resource type="PackedScene" uid="uid://bugp3xft5dakl" path="res://Scenes/Enemies/enemy.tscn" id="2_b2bpf"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ddkv70duynxc" path="res://Scenes/Structures/wall.tscn" id="6_fgofq"]
 [ext_resource type="Script" uid="uid://c6vcjgdnd3p3x" path="res://Scripts/UI/counter_label.gd" id="9_bf53h"]
 [ext_resource type="Script" uid="uid://8d6w7ajsikx3" path="res://Scripts/UI/wave_counter_lable.gd" id="10_71axn"]
+[ext_resource type="Script" uid="uid://b286gxsuai4l6" path="res://Scripts/UI/tier_display.gd" id="11_dahhg"]
 
 [node name="Game" type="Node2D"]
 
@@ -73,3 +74,12 @@ offset_right = -701.0
 offset_bottom = -227.0
 theme_override_font_sizes/font_size = 80
 script = ExtResource("10_71axn")
+
+[node name="TierDisplay" type="Label" parent="Camera2D/HUD"]
+layout_mode = 0
+offset_left = -1151.0
+offset_top = -213.0
+offset_right = -1111.0
+offset_bottom = -103.0
+theme_override_font_sizes/font_size = 80
+script = ExtResource("11_dahhg")
