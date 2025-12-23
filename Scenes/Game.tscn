@@ -9,14 +9,14 @@
 [ext_resource type="Script" uid="uid://behk56mj7j6r5" path="res://Scripts/round_handler.gd" id="5_2irst"]
 [ext_resource type="PackedScene" uid="uid://ddkv70duynxc" path="res://Scenes/Structures/wall.tscn" id="6_fgofq"]
 [ext_resource type="Script" uid="uid://c6vcjgdnd3p3x" path="res://Scripts/UI/counter_label.gd" id="9_bf53h"]
-[ext_resource type="Script" uid="uid://8d6w7ajsikx3" path="res://Scripts/UI/wave_counter_lable.gd" id="10_71axn"]
-[ext_resource type="Script" uid="uid://b286gxsuai4l6" path="res://Scripts/UI/tier_display.gd" id="11_dahhg"]
+[ext_resource type="Script" uid="uid://8d6w7ajsikx3" path="res://Scripts/UI/wave_counter_lablel.gd" id="10_71axn"]
+[ext_resource type="Script" uid="uid://b286gxsuai4l6" path="res://Scripts/UI/tier_display_label.gd" id="11_dahhg"]
 
 [node name="Game" type="Node2D"]
 
 [node name="DefendTower" type="Node2D" parent="."]
 
-[node name="Fort" type="Node2D" parent="DefendTower"]
+[node name="Fort" type="Node2D" parent="DefendTower" groups=["Fort"]]
 script = ExtResource("3_b2bpf")
 canon_scene = ExtResource("4_7lihs")
 wall_scene = ExtResource("6_fgofq")
@@ -35,7 +35,7 @@ wall_scene = ExtResource("6_fgofq")
 script = ExtResource("5_2irst")
 
 [node name="EnemySpawn" type="Node2D" parent="DefendTower/RoundHandler"]
-position = Vector2(-437, -407)
+position = Vector2(-868, -469)
 script = ExtResource("1_kldst")
 enemy_scene = ExtResource("2_b2bpf")
 
@@ -66,7 +66,7 @@ offset_bottom = -362.0
 theme_override_font_sizes/font_size = 80
 script = ExtResource("9_bf53h")
 
-[node name="WaveCounterLable" type="Label" parent="Camera2D/HUD"]
+[node name="WaveCounterLabel" type="Label" parent="Camera2D/HUD"]
 layout_mode = 0
 offset_left = -1154.0
 offset_top = -333.0
@@ -75,7 +75,7 @@ offset_bottom = -227.0
 theme_override_font_sizes/font_size = 80
 script = ExtResource("10_71axn")
 
-[node name="TierDisplay" type="Label" parent="Camera2D/HUD"]
+[node name="TierDisplayLabel" type="Label" parent="Camera2D/HUD"]
 layout_mode = 0
 offset_left = -1151.0
 offset_top = -213.0

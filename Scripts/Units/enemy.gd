@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var base_health: int = 1
+@export var base_health: int = 3
 @export var maximum_health: int
 @onready var current_health: int = maximum_health
 @onready var predicted_current_health: int = current_health
@@ -37,7 +37,6 @@ func _ready_target() -> void:
 			closest = node
 
 	_target = closest
-	
 
 func _physics_process(delta: float) -> void:
 	if _target == null:
@@ -52,15 +51,15 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	else:
 		# Close enough — stop and attack
-		velocity = Vector2.ZERO
+		#velocity = Vector2.ZERO
 		move_and_slide()
-		_handle_attack(delta)
+		#_handle_attack(delta)
 
-func set_stats(health_multiplier: int, max_multiplier: int):
+func set_stats(health_multiplier: int, attack_multiplier: int):
 	maximum_health = base_health * health_multiplier
-	maximum_attack = base_attack * max_multiplier
+	maximum_attack = base_attack * attack_multiplier
 
-func _handle_attack(delta: float) -> void:
+func _handle_attack(delta: float) -> void: # handle attack speed
 	if _time_since_last_attack > 0.0:
 		_time_since_last_attack -= delta
 		return

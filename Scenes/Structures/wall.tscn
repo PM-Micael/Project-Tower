@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddkv70duynxc"]
+[gd_scene load_steps=3 format=3 uid="uid://ddkv70duynxc"]
+
+[ext_resource type="Script" uid="uid://cq0p21p3xmrk1" path="res://Scripts/Structures/wall.gd" id="1_1qe3o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lihs"]
 size = Vector2(449, 20)
 
-[node name="Wall" type="StaticBody2D"]
+[node name="Wall" type="StaticBody2D" groups=["Fort", "Structure"]]
 rotation = -0.7853982
+script = ExtResource("1_1qe3o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7lihs")
