@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lihs"]
 size = Vector2(449, 20)
 
-[node name="Wall" type="StaticBody2D" groups=["Fort", "Structure"]]
+[node name="Wall" type="StaticBody2D" groups=["Ally_Targetable_Structure"]]
 rotation = -0.7853982
 script = ExtResource("1_1qe3o")
 

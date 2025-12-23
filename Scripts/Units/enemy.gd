@@ -16,21 +16,18 @@ extends CharacterBody2D
 var _target: Node2D = null
 var _time_since_last_attack: float = 0.0
 
-func _ready() -> void:
-	_ready_target()
-
 func _ready_target() -> void:
-	var fort = get_tree().get_nodes_in_group("Fort")
+	var target = get_tree().get_nodes_in_group("Ally_Targetable_Structure")
 
-	if fort.size() == 0:
-		push_warning("No tower found in group 'tower'")
+	if target.size() == 0:
+		push_warning("No tower found in group 'Fort'")
 		return
 
-	var closest: Node2D = fort[0]
+	var closest: Node2D = target[0]
 	var best_dist := closest.global_position.distance_to(global_position)
 
-	for f in fort:
-		var node := f as Node2D
+	for t in target:
+		var node := t as Node2D
 		var d := node.global_position.distance_to(global_position)
 		if d < best_dist:
 			best_dist = d
@@ -39,6 +36,7 @@ func _ready_target() -> void:
 	_target = closest
 
 func _physics_process(delta: float) -> void:
+	_ready_target()
 	if _target == null:
 		return
 

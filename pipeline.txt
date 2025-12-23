@@ -18,12 +18,8 @@
 	Notes
 		- Skins would be cool.
 
-2025-12-17
-	- Some restructuring of the enemy Scene might be needed as it riht now has "hitboxes" in multiple nodes
-
 2025-12-22
 	- Fix the attack time with new area hitbox collision
-	- Check the fort_progression for when the wall is set if there are inconsistencies with the Parrent node and the collider node
 	
 2025-12-23
 	Notes
