@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var base_health: int = 3
-@export var maximum_health: int
+var base_health: int = 1
+var maximum_health: int
 @onready var current_health: int = maximum_health
 @onready var predicted_current_health: int = current_health
 

@@ -29,10 +29,10 @@ func _set_properties():
 		_tier_number = db_data["users"]["UID_123"]["progress"]["fort"]["tier"]
 	
 	if fort_data:
-		_canon_slot_cords = fort_data["tier_" + str(_tier_number)]["canons_config"]["canon_slot_cords"]
-		_canon_attack = fort_data["tier_" + str(_tier_number)]["canons_config"]["canon_base_attack"]
+		_canon_slot_cords = fort_data["tier_" + str(_tier_number)]["map_1"]["canons_config"]["canon_slot_cords"]
+		_canon_attack = fort_data["tier_" + str(_tier_number)]["map_1"]["canons_config"]["canon_base_attack"]
 		
-		var wall_slots = fort_data["tier_" + str(_tier_number)]["walls_config"]["wall_slots"]
+		var wall_slots = fort_data["tier_" + str(_tier_number)]["map_1"]["walls_config"]["wall_slots"]
 		
 		for slot_name in wall_slots.keys():
 			var transform_dict = wall_slots[slot_name]["transform"]

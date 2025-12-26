@@ -16,3 +16,10 @@
 	
 	Notes
 		- Skins would be cool.
+
+2025-12-26
+	- Figure out how I want to handle maps.
+	- Perhaps make a test map.
+	
+	Notes
+		- As your fort grows it opens up possebility for more pawn locations for difficulity

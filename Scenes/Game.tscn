@@ -35,7 +35,22 @@ wall_scene = ExtResource("6_fgofq")
 script = ExtResource("5_2irst")
 
 [node name="EnemySpawn" type="Node2D" parent="DefendTower/RoundHandler"]
-position = Vector2(-868, -469)
+position = Vector2(-1145, -645)
+script = ExtResource("1_kldst")
+enemy_scene = ExtResource("2_b2bpf")
+
+[node name="EnemySpawn2" type="Node2D" parent="DefendTower/RoundHandler"]
+position = Vector2(1149, -647)
+script = ExtResource("1_kldst")
+enemy_scene = ExtResource("2_b2bpf")
+
+[node name="EnemySpawn3" type="Node2D" parent="DefendTower/RoundHandler"]
+position = Vector2(-1146, 646)
+script = ExtResource("1_kldst")
+enemy_scene = ExtResource("2_b2bpf")
+
+[node name="EnemySpawn4" type="Node2D" parent="DefendTower/RoundHandler"]
+position = Vector2(1147, 644)
 script = ExtResource("1_kldst")
 enemy_scene = ExtResource("2_b2bpf")
 

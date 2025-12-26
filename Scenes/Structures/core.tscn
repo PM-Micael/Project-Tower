@@ -16,7 +16,3 @@ shape = SubResource("RectangleShape2D_wtcfe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_lstiq")
-
-[node name="Turret" parent="." node_paths=PackedStringArray("core_scene") instance=ExtResource("3_8rc0j")]
-visible = false
-core_scene = NodePath("..")

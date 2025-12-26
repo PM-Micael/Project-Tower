@@ -1,47 +1,49 @@
 {
 	"tier_2": {
-		"canons_config" : {
-			"canon_slot_cords": {
-				"slot_1": {"x": 0.0, "y": -300.0},
-				"slot_2": {"x": 300.0, "y": 0.0},
-				"slot_3": {"x": 0.0, "y": 300.0},
-				"slot_4": {"x": -300.0, "y": 0.0},
+		"map_1": {
+			"canons_config" : {
+				"canon_slot_cords": {
+					"slot_1": {"x": 0.0, "y": -300.0},
+					"slot_2": {"x": 300.0, "y": 0.0},
+					"slot_3": {"x": 0.0, "y": 300.0},
+					"slot_4": {"x": -300.0, "y": 0.0},
+				},
+				"canon_base_attack": 4
 			},
-			"canon_base_attack": 4
+			"walls_config": {
+				"wall_slots": {
+					"slot_1": {
+						"transform":{"x": 150.0,"y": 150.0, "rotation": -45.0}
+					},
+					"slot_2": {
+						"transform":{"x": -150.0,"y": 150.0, "rotation": 45.0}
+					},
+					"slot_3": {
+						"transform":{"x": -150.0,"y": -150.0, "rotation": -45.0}
+					},
+					"slot_4": {
+						"transform":{"x": 150.0,"y": -150.0, "rotation": 45.0}
+					},
+				}
+			},
 		},
-		"walls_config": {
-			"wall_slots": {
-				"slot_1": {
-					"transform":{"x": 150.0,"y": 150.0, "rotation": -45.0}
-				},
-				"slot_2": {
-					"transform":{"x": -150.0,"y": 150.0, "rotation": 45.0}
-				},
-				"slot_3": {
-					"transform":{"x": -150.0,"y": -150.0, "rotation": -45.0}
-				},
-				"slot_4": {
-					"transform":{"x": 150.0,"y": -150.0, "rotation": 45.0}
-				},
+		"tier_triangle": {
+			"canon_slot_cords": {
+				"slot_1": { "x": 0.0, "y": 300.0 },
+				"slot_2": { "x": 259.8, "y": -150.0 },
+				"slot_3": { "x": -259.8,"y": -150.0 }
 			}
 		},
-	},
-	"tier_triangle": {
-		"canon_slot_cords": {
-			"slot_1": { "x": 0.0, "y": 300.0 },
-			"slot_2": { "x": 259.8, "y": -150.0 },
-			"slot_3": { "x": -259.8,"y": -150.0 }
+		"tier_hexagon": {
+			"canon_slot_cords": {
+			"slot_1": { "x": 200.0, "y": 0.0 },
+			"slot_2": { "x": 100.0, "y": -173.2 },
+			"slot_3": { "x": -100.0, "y": -173.2 },
+			"slot_4": { "x": -200.0, "y": 0.0 },
+			"slot_5": { "x": -100.0, "y": 173.2 },
+			"slot_6": { "x": 100.0, "y": 173.2 }
+		},
+		"wall_count": 6
 		}
-	},
-	"tier_hexagon": {
-		"canon_slot_cords": {
-		"slot_1": { "x": 200.0, "y": 0.0 },
-		"slot_2": { "x": 100.0, "y": -173.2 },
-		"slot_3": { "x": -100.0, "y": -173.2 },
-		"slot_4": { "x": -200.0, "y": 0.0 },
-		"slot_5": { "x": -100.0, "y": 173.2 },
-		"slot_6": { "x": 100.0, "y": 173.2 }
-	},
-	"wall_count": 6
-  }
+	}
 }

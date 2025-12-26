@@ -16,7 +16,6 @@ func _ready() -> void:
 		_enemy_base_health_multiplier = round_config_data["tier_" + str(_round_handler_node.round_tier)]["wave_multipliers"]["health_multiplier"]
 		_enemy_base_attack_multiplier = round_config_data["tier_" + str(_round_handler_node.round_tier)]["wave_multipliers"]["attack_multiplier"]
 
-
 func _physics_process(delta: float) -> void:
 	_counter(delta)
 

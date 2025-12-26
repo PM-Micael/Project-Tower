@@ -3,17 +3,32 @@ extends CharacterBody2D
 @export var attack_cooldown: float = 1.0
 @export var bullet_scene: PackedScene
 @export var core_scene: StaticBody2D # Draged currently
+
 @onready var fort_scene = get_tree().get_root().get_node("Game/DefendTower/Fort")
+@onready var range_area: Area2D = $Range
 
 var _time_since_last_attack: float = 0
 var attack_damage: int
+var attack_range: float = 550
 var _target : Node2D = null
+
+var enemies_in_range: Array[Node2D] = []
+
+func _ready() -> void:
+	range_area.body_entered.connect(_on_body_entered)
+	range_area.body_exited.connect(_on_body_exited)
+
+	var collision_shape := range_area.get_node("CollisionShape2D") as CollisionShape2D
+	var shape := collision_shape.shape as CircleShape2D
+	shape.radius = attack_range
+
+
 
 func _physics_process(delta: float) -> void:
 	_set_closest_core_target()
 	_handle_attack(delta)
 	
-func _set_closest_target() -> void:
+func _set_closest_target() -> void: # Not in use
 	var enemies = get_tree().get_nodes_in_group("Enemy Unit")
 	
 	enemies = enemies.filter(func(e):
@@ -35,28 +50,26 @@ func _set_closest_target() -> void:
 			closest = node
 	
 	_target = closest
-
 func _set_closest_core_target() -> void:
-	var enemies = get_tree().get_nodes_in_group("Enemy Unit")
-	
-	enemies = enemies.filter(func(e):
+	enemies_in_range = enemies_in_range.filter(func(e):
 		return is_instance_valid(e) and e.predicted_current_health > 0
 	)
-	
-	if enemies.size() == 0:
+
+	if enemies_in_range.is_empty():
+		_target = null
 		return
-	
-	var closest: Node2D = enemies[0]
+
+	var closest := enemies_in_range[0]
 	var best_dist := closest.global_position.distance_to(core_scene.global_position)
 
-	for e in enemies:
-		var node := e as Node2D
-		var d := node.global_position.distance_to(core_scene.global_position)
+	for e in enemies_in_range:
+		var d := e.global_position.distance_to(core_scene.global_position)
 		if d < best_dist:
 			best_dist = d
-			closest = node
-	
+			closest = e
+
 	_target = closest
+
 
 func _handle_attack(delta: float) -> void:
 	if _time_since_last_attack > 0.0:
@@ -87,3 +100,10 @@ func _shoot() -> void:
 	fort_scene.spawn_bullet(bullet)
 	
 	_target.predicted_current_health -= bullet.damage
+
+func _on_body_entered(body: Node) -> void:
+	if body.is_in_group("Enemy Unit"):
+		enemies_in_range.append(body)
+
+func _on_body_exited(body: Node) -> void:
+	enemies_in_range.erase(body)
