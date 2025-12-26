@@ -25,7 +25,6 @@ func _set_core_stats():
 		tier_number = db_data["users"]["UID_123"]["progress"]["current_round"]["fort"]["tier"]
 
 func take_damage(amount: int) -> void:
-	print("Core took damage")
 	current_health -= amount
 	if current_health <= 0:
 		current_health = 0

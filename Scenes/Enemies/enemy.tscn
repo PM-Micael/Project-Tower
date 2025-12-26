@@ -28,3 +28,5 @@ script = ExtResource("3_x1rqp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox"]
 position = Vector2(4.7683716e-07, 1.3333328)
 shape = SubResource("RectangleShape2D_x1rqp")
+
+[node name="AttackTimer" type="Timer" parent="AttackBox"]

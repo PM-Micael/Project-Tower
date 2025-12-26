@@ -48,7 +48,6 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 	else:
 		# Close enough — stop and attack
-		#velocity = Vector2.ZERO
 		move_and_slide()
 
 func set_stats(health_multiplier: int, attack_multiplier: int):
