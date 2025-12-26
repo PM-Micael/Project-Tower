@@ -2,7 +2,7 @@ extends Node2D
 
 @export var canon_scene: PackedScene
 @export var wall_scene: PackedScene
-@onready var core_scene: Area2D = $Core
+@onready var core_scene: StaticBody2D = $Core
 @onready var structures_node: Node2D = $Structures
 @onready var walls_node: Node2D = structures_node.get_node("Walls")
 @onready var canons_node: Node2D = structures_node.get_node("Canons")

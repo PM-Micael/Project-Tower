@@ -7,11 +7,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
 size = Vector2(127, 127)
 
-[node name="Core" type="Area2D" groups=["Ally_Targetable_Structure", "Core", "Fort"]]
+[node name="Core" type="StaticBody2D" groups=["Ally_Targetable_Structure", "Core", "Fort"]]
 script = ExtResource("1_wtb72")
 canon_scene = ExtResource("3_8rc0j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Ally_Targetable_Structure"]]
 shape = SubResource("RectangleShape2D_wtcfe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

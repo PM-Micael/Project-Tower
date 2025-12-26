@@ -14,10 +14,9 @@ extends CharacterBody2D
 @export var attack_cooldown: float = 1.0
 
 var _target: Node2D = null
-var _time_since_last_attack: float = 0.0
 
 func _ready_target() -> void:
-	var target = get_tree().get_nodes_in_group("Ally_Targetable_Structure")
+	var target = get_tree().get_nodes_in_group("Core")
 
 	if target.size() == 0:
 		push_warning("No tower found in group 'Fort'")
@@ -35,7 +34,7 @@ func _ready_target() -> void:
 
 	_target = closest
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	_ready_target()
 	if _target == null:
 		return
@@ -51,23 +50,10 @@ func _physics_process(delta: float) -> void:
 		# Close enough — stop and attack
 		#velocity = Vector2.ZERO
 		move_and_slide()
-		#_handle_attack(delta)
 
 func set_stats(health_multiplier: int, attack_multiplier: int):
 	maximum_health = base_health * health_multiplier
 	maximum_attack = base_attack * attack_multiplier
-
-func _handle_attack(delta: float) -> void: # handle attack speed
-	if _time_since_last_attack > 0.0:
-		_time_since_last_attack -= delta
-		return
-
-	_time_since_last_attack = attack_cooldown
-	_do_attack()
-
-func _do_attack() -> void:
-	if _target and _target.has_method("take_damage"):
-		_target.call("take_damage", 1)
 
 func take_damage(amount: int) -> void:
 	current_health -= amount
