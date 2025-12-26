@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var fort_scene = get_tree().get_root().get_node("Game/DefendTower/Fort")
 
 var _time_since_last_attack: float = 0
+var attack_damage: int
 var _target : Node2D = null
 
 func _physics_process(delta: float) -> void:
@@ -82,6 +83,7 @@ func _shoot() -> void:
 	bullet.global_position = global_position
 	bullet.target = _target
 	bullet.name = "Bullet"
+	bullet.damage += attack_damage
 	fort_scene.spawn_bullet(bullet)
 	
 	_target.predicted_current_health -= bullet.damage

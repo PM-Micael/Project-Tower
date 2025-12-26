@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0k3abpx5lwt7"]
 
-[ext_resource type="Script" uid="uid://buc7rjbhp6ewo" path="res://Scripts/Structures/turret.gd" id="1_4gbb4"]
+[ext_resource type="Script" uid="uid://buc7rjbhp6ewo" path="res://Scripts/Structures/canon.gd" id="1_4gbb4"]
 [ext_resource type="PackedScene" uid="uid://bl6pq5oa013hb" path="res://Scenes/Bullets/bullet.tscn" id="2_6c825"]
 [ext_resource type="Texture2D" uid="uid://bxbhdlkjkhkn7" path="res://Assets/laserturret.png" id="3_hqwwg"]
 

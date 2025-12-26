@@ -10,6 +10,7 @@ extends Node2D
 
 var _tier_number: int
 var _canon_slot_cords: Dictionary
+var _canon_attack: int
 
 var _wall_transforms: Array[Transform2D]
 
@@ -28,9 +29,10 @@ func _set_properties():
 		_tier_number = db_data["users"]["UID_123"]["progress"]["fort"]["tier"]
 	
 	if fort_data:
-		_canon_slot_cords = fort_data["tier_" + str(_tier_number)]["canon_slot_cords"]
+		_canon_slot_cords = fort_data["tier_" + str(_tier_number)]["canons_config"]["canon_slot_cords"]
+		_canon_attack = fort_data["tier_" + str(_tier_number)]["canons_config"]["canon_base_attack"]
 		
-		var wall_slots = fort_data["tier_" + str(_tier_number)]["wall_slots"]
+		var wall_slots = fort_data["tier_" + str(_tier_number)]["walls_config"]["wall_slots"]
 		
 		for slot_name in wall_slots.keys():
 			var transform_dict = wall_slots[slot_name]["transform"]
@@ -66,6 +68,7 @@ func _spawn_canons():
 		
 		canon.name = slot_name
 		canon.core_scene = core_scene
+		canon.attack_damage = _canon_attack
 		canons_node.add_child(canon)
 
 func spawn_bullet(bullet: Node2D):

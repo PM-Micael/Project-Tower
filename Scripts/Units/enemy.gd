@@ -56,7 +56,5 @@ func set_stats(health_multiplier: int, attack_multiplier: int):
 
 func take_damage(amount: int) -> void:
 	current_health -= amount
-	
 	if current_health <= 0:
-		
 		queue_free()

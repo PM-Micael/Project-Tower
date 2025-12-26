@@ -19,5 +19,5 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 	else:
 		if target and target.has_method("take_damage"):
-			target.call("take_damage", 1)
+			target.call("take_damage", damage)
 			queue_free()
