@@ -9,7 +9,7 @@ extends CharacterBody2D
 
 var _time_since_last_attack: float = 0
 var attack_damage: int
-var attack_range: float = 550
+var attack_range: float
 var _target : Node2D = null
 
 var enemies_in_range: Array[Node2D] = []

@@ -8,8 +8,7 @@
 					"slot_3": {"x": 0.0, "y": 300.0},
 					"slot_4": {"x": -300.0, "y": 0.0},
 				},
-				"canon_base_attack_damage": 4,
-				"canon_attack_range": 500
+				"canon_base_attack": 4
 			},
 			"walls_config": {
 				"wall_slots": {
@@ -24,9 +23,9 @@
 					},
 					"slot_4": {
 						"transform":{"x": 150.0,"y": -150.0, "rotation": 45.0}
-					}
+					},
 				}
-			}
+			},
 		},
 		"tier_triangle": {
 			"canon_slot_cords": {
