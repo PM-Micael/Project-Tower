@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddmuxee43qsb1"]
+
+[ext_resource type="Script" uid="uid://behk56mj7j6r5" path="res://Scripts/round_handler.gd" id="1_a1tkx"]
+[ext_resource type="PackedScene" uid="uid://beewxtgi6nivx" path="res://Scenes/Enemies/enemy_spawner.tscn" id="2_33r3r"]
+
+[node name="RoundHandler" type="Node2D"]
+script = ExtResource("1_a1tkx")
+enemy_spawner_scene = ExtResource("2_33r3r")
+
+[node name="EnemySpawners" type="Node2D" parent="."]

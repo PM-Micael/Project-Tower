@@ -23,3 +23,7 @@
 	
 	Notes
 		- As your fort grows it opens up possebility for more pawn locations for difficulity
+	
+2025-12-28
+	- Handle spawners and spawning of spawners
+	- Data like fort tier number that is set in multiple nodes can be set in one place and reused.

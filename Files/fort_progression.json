@@ -26,7 +26,21 @@
 						"transform":{"x": 150.0,"y": -150.0, "rotation": 45.0}
 					}
 				}
-			}
+			},
+			"enemy_spawners": {
+				"spawner_1": {
+					"transform":{"x":-1145.0, "y":-645.0}
+				},
+				"spawner_2": {
+					"transform":{"x":1149.0, "y":-647.0}
+				},
+				"spawner_3": {
+					"transform":{"x":-1146.0, "y":646.0}
+				},
+				"spawner_4": {
+					"transform":{"x":1147.0, "y":644.0}
+				},
+			},
 		},
 		"tier_triangle": {
 			"canon_slot_cords": {

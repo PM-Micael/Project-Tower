@@ -3,22 +3,60 @@ extends Node2D
 @export var wave_duration: float = 10.0
 @export var prep_phase_duration: float = 5.0
 @export var round_tier: int = 2 # Placeholder
+@export var enemy_spawner_scene: PackedScene
 
-var current_tier: int = 1 # Placeholder
+@onready var enemey_spawners_node: Node2D = $EnemySpawners
+
 var current_wave: int = 1 # Placeholder
 var wave_countdown: float = wave_duration
 var prep_phase_countdown: float = prep_phase_duration
 var in_prep_phase: bool
+var _enemy_spawners: Dictionary
+var _fort_tier_number: int
+var _player_selected_map: String
 
 signal timer_update (title, count)
 signal wave_update (count)
 
+func _init() -> void:
+	_set_properties()
+
 func _ready() -> void:
 	await get_tree().process_frame
 	emit_signal("wave_update", current_wave)
+	_place_enemy_spawners()
 
 func _physics_process(delta: float) -> void:
 	_counter(delta)
+
+func _set_properties():
+	var db_data = Global.load_json("res://Files/db.json")
+	var fort_data = Global.load_json("res://Files/fort_progression.json")
+	
+	if db_data:
+		_fort_tier_number = db_data["users"]["UID_123"]["progress"]["fort"]["tier"]
+		_player_selected_map = db_data["users"]["UID_123"]["selected_map"]
+	
+	if fort_data:
+		_enemy_spawners = fort_data["tier_" + str(_fort_tier_number)][_player_selected_map]["enemy_spawners"]
+
+func _place_enemy_spawners():
+	if enemy_spawner_scene == null:
+		return
+
+	for spawner_name in _enemy_spawners:
+		var spawner_data = _enemy_spawners[spawner_name]
+
+		var enemy_spawner = enemy_spawner_scene.instantiate()
+
+		enemy_spawner.global_position = Vector2(
+			spawner_data["transform"]["x"],
+			spawner_data["transform"]["y"]
+		)
+
+		enemy_spawner.name = spawner_name
+		enemey_spawners_node.add_child(enemy_spawner)
+
 
 func _counter(delta: float):
 	var title: String
@@ -29,7 +67,6 @@ func _counter(delta: float):
 			wave_countdown -= delta
 			title = "Wave duration"
 			counter = wave_countdown
-			# print(title + ": " + str(wave_countdown))
 		else:
 			wave_countdown = wave_duration
 			in_prep_phase = true
@@ -38,7 +75,6 @@ func _counter(delta: float):
 			prep_phase_countdown -= delta
 			title = "Prep phase"
 			counter = prep_phase_countdown
-			# print(title + ": " + str(prep_phase_countdown))
 		else:
 			prep_phase_countdown = prep_phase_duration
 			in_prep_phase = false

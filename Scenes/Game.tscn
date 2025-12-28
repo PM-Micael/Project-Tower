@@ -1,12 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://0iqkb04oacik"]
+[gd_scene load_steps=10 format=3 uid="uid://0iqkb04oacik"]
 
-[ext_resource type="Script" uid="uid://ct5mcwjrs6h4h" path="res://Scripts/Structures/enemy_spawn.gd" id="1_kldst"]
-[ext_resource type="PackedScene" uid="uid://bugp3xft5dakl" path="res://Scenes/Enemies/enemy.tscn" id="2_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://djkssdnxpx331" path="res://Scenes/Structures/core.tscn" id="3_7lihs"]
 [ext_resource type="Script" uid="uid://bd5vnub00s8ra" path="res://Scripts/Structures/fort.gd" id="3_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://b0k3abpx5lwt7" path="res://Scenes/Structures/canon.tscn" id="4_7lihs"]
 [ext_resource type="Script" uid="uid://csctngf5o2avw" path="res://Scripts/UI/health_label.gd" id="4_fgofq"]
-[ext_resource type="Script" uid="uid://behk56mj7j6r5" path="res://Scripts/round_handler.gd" id="5_2irst"]
+[ext_resource type="PackedScene" uid="uid://ddmuxee43qsb1" path="res://Scenes/round_handler.tscn" id="5_bf53h"]
 [ext_resource type="PackedScene" uid="uid://ddkv70duynxc" path="res://Scenes/Structures/wall.tscn" id="6_fgofq"]
 [ext_resource type="Script" uid="uid://c6vcjgdnd3p3x" path="res://Scripts/UI/counter_label.gd" id="9_bf53h"]
 [ext_resource type="Script" uid="uid://8d6w7ajsikx3" path="res://Scripts/UI/wave_counter_lablel.gd" id="10_71axn"]
@@ -31,28 +29,7 @@ wall_scene = ExtResource("6_fgofq")
 
 [node name="Bullets" type="Node2D" parent="DefendTower/Fort"]
 
-[node name="RoundHandler" type="Node2D" parent="DefendTower"]
-script = ExtResource("5_2irst")
-
-[node name="EnemySpawn" type="Node2D" parent="DefendTower/RoundHandler"]
-position = Vector2(-1145, -645)
-script = ExtResource("1_kldst")
-enemy_scene = ExtResource("2_b2bpf")
-
-[node name="EnemySpawn2" type="Node2D" parent="DefendTower/RoundHandler"]
-position = Vector2(1149, -647)
-script = ExtResource("1_kldst")
-enemy_scene = ExtResource("2_b2bpf")
-
-[node name="EnemySpawn3" type="Node2D" parent="DefendTower/RoundHandler"]
-position = Vector2(-1146, 646)
-script = ExtResource("1_kldst")
-enemy_scene = ExtResource("2_b2bpf")
-
-[node name="EnemySpawn4" type="Node2D" parent="DefendTower/RoundHandler"]
-position = Vector2(1147, 644)
-script = ExtResource("1_kldst")
-enemy_scene = ExtResource("2_b2bpf")
+[node name="RoundHandler" parent="DefendTower" instance=ExtResource("5_bf53h")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)

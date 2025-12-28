@@ -2,7 +2,7 @@ extends Node2D
 
 @export var spawn_cooldown: float = 1.0
 @export var enemy_scene: PackedScene
-@onready var _round_handler_node: Node2D = get_parent()
+@onready var _round_handler_node: Node2D = get_parent().get_parent()
 
 var _enemy_base_health_multiplier: int
 var _enemy_base_attack_multiplier: int 

@@ -8,7 +8,7 @@ extends Node2D
 @onready var canons_node: Node2D = structures_node.get_node("Canons")
 @onready var bullets_node: Node2D = $Bullets
 
-var _tier_number: int
+var _fort_tier_number: int
 var _canon_slot_cords: Dictionary
 var _canon_attack: int
 var _canon_attack_range: float
@@ -27,14 +27,14 @@ func _set_properties():
 	var fort_data = Global.load_json("res://Files/fort_progression.json")
 	
 	if db_data:
-		_tier_number = db_data["users"]["UID_123"]["progress"]["fort"]["tier"]
+		_fort_tier_number = db_data["users"]["UID_123"]["progress"]["fort"]["tier"]
 	
 	if fort_data:
-		_canon_slot_cords = fort_data["tier_" + str(_tier_number)]["map_1"]["canons_config"]["canon_slot_cords"]
-		_canon_attack = fort_data["tier_" + str(_tier_number)]["map_1"]["canons_config"]["canon_base_attack_damage"]
-		_canon_attack_range = fort_data["tier_" + str(_tier_number)]["map_1"]["canons_config"]["canon_attack_range"]
+		_canon_slot_cords = fort_data["tier_" + str(_fort_tier_number)]["map_1"]["canons_config"]["canon_slot_cords"]
+		_canon_attack = fort_data["tier_" + str(_fort_tier_number)]["map_1"]["canons_config"]["canon_base_attack_damage"]
+		_canon_attack_range = fort_data["tier_" + str(_fort_tier_number)]["map_1"]["canons_config"]["canon_attack_range"]
 		
-		var wall_slots = fort_data["tier_" + str(_tier_number)]["map_1"]["walls_config"]["wall_slots"]
+		var wall_slots = fort_data["tier_" + str(_fort_tier_number)]["map_1"]["walls_config"]["wall_slots"]
 		
 		for slot_name in wall_slots.keys():
 			var transform_dict = wall_slots[slot_name]["transform"]

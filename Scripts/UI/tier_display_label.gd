@@ -4,4 +4,4 @@ extends Label
 
 func _ready() -> void:
 	if round_handler:
-		text = "Tier: " + str(round_handler.current_tier)
+		text = "Tier: " + str(round_handler.round_tier)

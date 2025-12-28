@@ -15,25 +15,6 @@ var maximum_health: int
 
 var _target: Node2D = null
 
-func _ready_target() -> void:
-	var target = get_tree().get_nodes_in_group("Core")
-
-	if target.size() == 0:
-		push_warning("No tower found in group 'Fort'")
-		return
-
-	var closest: Node2D = target[0]
-	var best_dist := closest.global_position.distance_to(global_position)
-
-	for t in target:
-		var node := t as Node2D
-		var d := node.global_position.distance_to(global_position)
-		if d < best_dist:
-			best_dist = d
-			closest = node
-
-	_target = closest
-
 func _physics_process(_delta: float) -> void:
 	_ready_target()
 	if _target == null:
@@ -53,8 +34,28 @@ func _physics_process(_delta: float) -> void:
 func set_stats(health_multiplier: int, attack_multiplier: int):
 	maximum_health = base_health * health_multiplier
 	maximum_attack = base_attack * attack_multiplier
+	print("Health max:" + str(maximum_health))
 
 func take_damage(amount: int) -> void:
 	current_health -= amount
 	if current_health <= 0:
 		queue_free()
+
+func _ready_target() -> void:
+	var target = get_tree().get_nodes_in_group("Core")
+
+	if target.size() == 0:
+		push_warning("No tower found in group 'Fort'")
+		return
+
+	var closest: Node2D = target[0]
+	var best_dist := closest.global_position.distance_to(global_position)
+
+	for t in target:
+		var node := t as Node2D
+		var d := node.global_position.distance_to(global_position)
+		if d < best_dist:
+			best_dist = d
+			closest = node
+
+	_target = closest
