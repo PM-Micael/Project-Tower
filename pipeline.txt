@@ -9,11 +9,7 @@
 		- Tower tiers will work in layers and start with 3 walls
 		- Player can set a "watchpoint" to somewhat control where the canons will shoot.
 		
-2025-12-15
-	- Make waves and spawning work properly
-	- Investigate the delay in canons shoting when round starts
-	- Display current tier and round on the UI
-	
+2025-12-15	
 	Notes
 		- Skins would be cool.
 
@@ -26,3 +22,4 @@
 	
 2025-12-28
 	- Data like fort tier number that is set in multiple nodes can be set in one place and reused.
+	 -Attack should trigger the moment an enemy enters range and not just after cooldown

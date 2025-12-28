@@ -36,7 +36,6 @@ func _physics_process(_delta: float) -> void:
 func set_stats(health_multiplier: int, attack_multiplier: int):
 	maximum_health = base_health * (health_multiplier * _round_handler_node.current_wave)
 	maximum_attack = base_attack * (attack_multiplier * _round_handler_node.current_wave)
-	print("Health max:" + str(maximum_health))
 
 func take_damage(amount: int) -> void:
 	current_health -= amount

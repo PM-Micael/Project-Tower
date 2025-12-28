@@ -15,6 +15,10 @@ var _enemy_spawners: Dictionary
 var _fort_tier_number: int
 var _player_selected_map: String
 
+# Enemy stats
+var _enemy_maximum_health_multiplier: int
+var _enemy_maximum_attack_multiplier: int
+
 signal timer_update (title, count)
 signal wave_update (count)
 
@@ -29,7 +33,18 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	_counter(delta)
 
+func _DEBUG_set_enemy_stats():
+	var round_config_data = Global.load_json("res://Files/round_config.json")
+	
+	if round_config_data:
+		_enemy_maximum_health_multiplier = round_config_data["tier_" + str(round_tier)]["wave_multipliers"]["health_multiplier"]
+		_enemy_maximum_attack_multiplier = round_config_data["tier_" + str(round_tier)]["wave_multipliers"]["attack_multiplier"]
+	
+		print("Enemy Health: " + str(current_wave * _enemy_maximum_health_multiplier))
+		print("Enemy Attack: " + str(current_wave * _enemy_maximum_attack_multiplier))
+
 func _set_properties():
+	_DEBUG_set_enemy_stats()
 	var db_data = Global.load_json("res://Files/db.json")
 	var fort_data = Global.load_json("res://Files/fort_progression.json")
 	
@@ -57,7 +72,6 @@ func _place_enemy_spawners():
 		enemy_spawner.name = spawner_name
 		enemey_spawners_node.add_child(enemy_spawner)
 
-
 func _counter(delta: float):
 	var title: String
 	var counter: float
@@ -80,5 +94,6 @@ func _counter(delta: float):
 			in_prep_phase = false
 			current_wave += 1
 			emit_signal("wave_update", current_wave)
+			_DEBUG_set_enemy_stats()
 	
 	emit_signal("timer_update", title, counter)

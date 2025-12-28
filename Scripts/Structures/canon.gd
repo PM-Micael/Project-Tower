@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var attack_cooldown: float = 1.0
+@export var attack_cooldown: float = 0.5
 @export var bullet_scene: PackedScene
 @export var core_scene: StaticBody2D # Draged currently
 
@@ -22,12 +22,10 @@ func _ready() -> void:
 	var shape := collision_shape.shape as CircleShape2D
 	shape.radius = attack_range
 
-
-
 func _physics_process(delta: float) -> void:
 	_set_closest_core_target()
 	_handle_attack(delta)
-	
+
 func _set_closest_target() -> void: # Not in use
 	var enemies = get_tree().get_nodes_in_group("Enemy Unit")
 	
@@ -50,6 +48,7 @@ func _set_closest_target() -> void: # Not in use
 			closest = node
 	
 	_target = closest
+
 func _set_closest_core_target() -> void:
 	enemies_in_range = enemies_in_range.filter(func(e):
 		return is_instance_valid(e) and e.predicted_current_health > 0
@@ -69,7 +68,6 @@ func _set_closest_core_target() -> void:
 			closest = e
 
 	_target = closest
-
 
 func _handle_attack(delta: float) -> void:
 	if _time_since_last_attack > 0.0:
