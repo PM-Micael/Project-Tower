@@ -15,6 +15,8 @@ func _ready() -> void:
 		# These are why this is made in _ready and not _init
 		_enemy_base_health_multiplier = round_config_data["tier_" + str(_round_handler_node.round_tier)]["wave_multipliers"]["health_multiplier"]
 		_enemy_base_attack_multiplier = round_config_data["tier_" + str(_round_handler_node.round_tier)]["wave_multipliers"]["attack_multiplier"]
+	
+	#_round_handler_node.connect("wave_update",Callable(self, on_wave_update))
 
 func _physics_process(delta: float) -> void:
 	_counter(delta)
@@ -34,5 +36,6 @@ func spawn_unit() -> void:
 		return
 		
 	var enemy = enemy_scene.instantiate()
+	enemy._round_handler_node = get_parent().get_parent()
 	enemy.set_stats(_enemy_base_health_multiplier, _enemy_base_attack_multiplier)
 	add_child(enemy)

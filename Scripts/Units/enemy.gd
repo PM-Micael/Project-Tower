@@ -13,6 +13,8 @@ var maximum_health: int
 @export var stop_distance: float = 140.0
 @export var attack_cooldown: float = 1.0
 
+@onready var _round_handler_node: Node2D
+
 var _target: Node2D = null
 
 func _physics_process(_delta: float) -> void:
@@ -32,8 +34,8 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 
 func set_stats(health_multiplier: int, attack_multiplier: int):
-	maximum_health = base_health * health_multiplier
-	maximum_attack = base_attack * attack_multiplier
+	maximum_health = base_health * (health_multiplier * _round_handler_node.current_wave)
+	maximum_attack = base_attack * (attack_multiplier * _round_handler_node.current_wave)
 	print("Health max:" + str(maximum_health))
 
 func take_damage(amount: int) -> void:
