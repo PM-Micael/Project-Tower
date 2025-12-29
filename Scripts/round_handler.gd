@@ -2,7 +2,7 @@ extends Node2D
 
 @export var wave_duration: float = 10.0
 @export var prep_phase_duration: float = 5.0
-@export var round_tier: int = 2 # Placeholder
+@export var round_tier: int = 1 # Placeholder
 @export var enemy_spawner_scene: PackedScene
 
 @onready var enemey_spawners_node: Node2D = $EnemySpawners

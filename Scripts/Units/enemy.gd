@@ -5,12 +5,11 @@ var maximum_health: int
 @onready var current_health: int = maximum_health
 @onready var predicted_current_health: int = current_health
 
-@export var base_attack: int = 1
-@export var maximum_attack: int
+var base_attack: int = 1
+var maximum_attack: int
 @onready var current_attack: int = maximum_attack
 
 @export var speed: float = 200.0
-@export var stop_distance: float = 140.0
 @export var attack_cooldown: float = 1.0
 
 @onready var _round_handler_node: Node2D
@@ -19,23 +18,20 @@ var _target: Node2D = null
 
 func _physics_process(_delta: float) -> void:
 	_ready_target()
-	if _target == null:
-		return
-
-	var dir: Vector2 = _target.global_position - global_position
-	var dist: float = dir.length()
-
-	if dist > stop_distance:
-		# Move toward the tower
-		velocity = dir.normalized() * speed
-		move_and_slide()
-	else:
-		# Close enough — stop and attack
-		move_and_slide()
+	move_to_target()
 
 func set_stats(health_multiplier: int, attack_multiplier: int):
 	maximum_health = base_health * (health_multiplier * _round_handler_node.current_wave)
 	maximum_attack = base_attack * (attack_multiplier * _round_handler_node.current_wave)
+
+func move_to_target():
+	if _target == null:
+		return
+
+	var dir: Vector2 = _target.global_position - global_position
+
+	velocity = dir.normalized() * speed
+	move_and_slide()
 
 func take_damage(amount: int) -> void:
 	current_health -= amount

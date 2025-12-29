@@ -1,7 +1,7 @@
 extends StaticBody2D
 
-var maximum_health: int = 5
-var current_health: int = 1
+var maximum_health: int = 20
+@onready var current_health: int = maximum_health
 
 func _init() -> void:
 	_set_stats()

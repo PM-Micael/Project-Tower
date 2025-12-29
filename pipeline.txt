@@ -22,4 +22,5 @@
 	
 2025-12-28
 	- Data like fort tier number that is set in multiple nodes can be set in one place and reused.
-	 -Attack should trigger the moment an enemy enters range and not just after cooldown
+	- Attack should trigger the moment an enemy enters range and not just after cooldown
+	- Make a Start menu
