@@ -1,19 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddkv70duynxc"]
+[gd_scene load_steps=6 format=3 uid="uid://ddkv70duynxc"]
 
 [ext_resource type="Script" uid="uid://cq0p21p3xmrk1" path="res://Scripts/Structures/wall.gd" id="1_1qe3o"]
+[ext_resource type="Script" uid="uid://skwgcvcst1ia" path="res://Scripts/Structures/clickable_wall.gd" id="2_q74e8"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q74e8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lihs"]
 size = Vector2(449, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q74e8"]
+size = Vector2(253.36519, 2.1253643)
+
 [node name="Wall" type="StaticBody2D" groups=["Ally_Targetable_Structure"]]
+z_as_relative = false
 rotation = -0.7853982
 script = ExtResource("1_1qe3o")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.59085083, -0.3620839)
+scale = Vector2(450.48743, 19.88266)
+texture = SubResource("PlaceholderTexture2D_q74e8")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
 shape = SubResource("RectangleShape2D_7lihs")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -225.0
-offset_top = -10.0
-offset_right = 224.0
-offset_bottom = 10.0
+[node name="ClickableWall" type="Area2D" parent="."]
+scale = Vector2(1.7777779, 9.31558)
+script = ExtResource("2_q74e8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableWall"]
+position = Vector2(0.5966334, 5.7742e-07)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_q74e8")

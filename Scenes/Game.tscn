@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://0iqkb04oacik"]
+[gd_scene load_steps=12 format=3 uid="uid://0iqkb04oacik"]
 
 [ext_resource type="PackedScene" uid="uid://djkssdnxpx331" path="res://Scenes/Structures/core.tscn" id="3_7lihs"]
 [ext_resource type="Script" uid="uid://bd5vnub00s8ra" path="res://Scripts/Structures/fort.gd" id="3_b2bpf"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://c6vcjgdnd3p3x" path="res://Scripts/UI/counter_label.gd" id="9_bf53h"]
 [ext_resource type="Script" uid="uid://8d6w7ajsikx3" path="res://Scripts/UI/wave_counter_lablel.gd" id="10_71axn"]
 [ext_resource type="Script" uid="uid://bc7hdlku2ilwq" path="res://Scripts/UI/scrap_amount_label.gd" id="10_dahhg"]
+[ext_resource type="Script" uid="uid://pmgyqavexbg0" path="res://Scripts/UI/selected_object_panel.gd" id="11_3so38"]
 [ext_resource type="Script" uid="uid://b286gxsuai4l6" path="res://Scripts/UI/tier_display_label.gd" id="11_dahhg"]
 
 [node name="Game" type="Node2D"]
@@ -90,3 +91,15 @@ offset_bottom = -50.0
 theme_override_font_sizes/font_size = 80
 text = "Scrap"
 script = ExtResource("10_dahhg")
+
+[node name="SelectedObjectPanel" type="Control" parent="Camera2D/HUD"]
+anchors_preset = 0
+offset_left = -586.0
+offset_top = 51.999992
+offset_right = -546.0
+offset_bottom = 91.99999
+scale = Vector2(10.743175, 8.9970665)
+script = ExtResource("11_3so38")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/HUD/SelectedObjectPanel"]
+position = Vector2(18.523388, 16.116365)
