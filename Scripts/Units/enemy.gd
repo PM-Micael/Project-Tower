@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+# Combat stats
 var base_health: int = 1
 var maximum_health: int
 @onready var current_health: int = maximum_health
@@ -9,8 +10,12 @@ var base_attack: int = 1
 var maximum_attack: int
 @onready var current_attack: int = maximum_attack
 
-@export var speed: float = 200.0
-@export var attack_cooldown: float = 1.0
+var speed: float = 200.0
+var attack_cooldown: float = 1.0
+
+#Other
+var scrap_drop_on_death: int = 2 # Placeholder
+var coin_drop_on_death: int = 1
 
 @onready var _round_handler_node: Node2D
 
@@ -36,6 +41,8 @@ func move_to_target():
 func take_damage(amount: int) -> void:
 	current_health -= amount
 	if current_health <= 0:
+		if _round_handler_node.has_method("fetch_kill_rewards"):
+			_round_handler_node.fetch_kill_rewards(scrap_drop_on_death, coin_drop_on_death)
 		queue_free()
 
 func _ready_target() -> void:

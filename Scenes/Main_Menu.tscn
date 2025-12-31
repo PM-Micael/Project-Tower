@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d27x86bs35jyi"]
+[gd_scene load_steps=3 format=3 uid="uid://d27x86bs35jyi"]
 
 [ext_resource type="Script" uid="uid://c12st0ktyn1sx" path="res://Scripts/UI/main_menu.gd" id="1_c4tk2"]
+[ext_resource type="Script" uid="uid://bontb7xa60nge" path="res://Scenes/play_button_label.gd" id="2_rmbjf"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,3 +11,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c4tk2")
+
+[node name="PlayButtonLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+mouse_filter = 0
+text = "Play"
+script = ExtResource("2_rmbjf")

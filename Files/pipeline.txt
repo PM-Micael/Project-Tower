@@ -24,3 +24,8 @@
 	- Data like fort tier number that is set in multiple nodes can be set in one place and reused.
 	- Attack should trigger the moment an enemy enters range and not just after cooldown
 	- Make a Start menu
+
+2025-12-28
+	- Resourses:
+		- Scrap: From destroyed enemies
+		- Coin/Reputation: Gained through a round. Used for upgrading outside the round

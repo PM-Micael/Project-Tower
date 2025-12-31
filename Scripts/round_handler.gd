@@ -1,8 +1,8 @@
 extends Node2D
 
-@export var wave_duration: float = 10.0
-@export var prep_phase_duration: float = 5.0
-@export var round_tier: int = 1 # Placeholder
+var wave_duration: float = 10.0
+var prep_phase_duration: float = 5.0
+var round_tier: int = 1 # Placeholder
 @export var enemy_spawner_scene: PackedScene
 
 @onready var enemey_spawners_node: Node2D = $EnemySpawners
@@ -15,19 +15,24 @@ var _enemy_spawners: Dictionary
 var _fort_tier_number: int
 var _player_selected_map: String
 
+# Resources
+var current_scrap_amount: int
+
 # Enemy stats
 var _enemy_maximum_health_multiplier: int
 var _enemy_maximum_attack_multiplier: int
 
 signal timer_update (title, count)
 signal wave_update (count)
+signal scrap_update (count)
 
 func _init() -> void:
 	_set_properties()
 
 func _ready() -> void:
-	await get_tree().process_frame
+	await get_tree().process_frame # Test
 	emit_signal("wave_update", current_wave)
+	emit_signal("scrap_update", current_scrap_amount)
 	_place_enemy_spawners()
 
 func _physics_process(delta: float) -> void:
@@ -97,3 +102,7 @@ func _counter(delta: float):
 			_DEBUG_set_enemy_stats()
 	
 	emit_signal("timer_update", title, counter)
+
+func fetch_kill_rewards(scrap_drop: int, coin: int):
+	current_scrap_amount += scrap_drop
+	emit_signal("scrap_update", current_scrap_amount)
