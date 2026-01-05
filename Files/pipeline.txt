@@ -29,3 +29,6 @@
 	- Resourses:
 		- Scrap: From destroyed enemies
 		- Coin/Reputation: Gained through a round. Used for upgrading outside the round
+
+2026-12-28
+	- Make so you can choose tier in main menu.

@@ -7,7 +7,7 @@ var round_tier: int = 1 # Placeholder
 
 @onready var enemey_spawners_node: Node2D = $EnemySpawners
 
-var current_wave: int = 1 # Placeholder
+var current_wave: int = 5 # Placeholder
 var wave_countdown: float = wave_duration
 var prep_phase_countdown: float = prep_phase_duration
 var in_prep_phase: bool

@@ -22,7 +22,7 @@ func _set_core_stats():
 	if db_data:
 		current_health = db_data["users"]["UID_123"]["progress"]["current_round"]["fort"]["core_stats"]["current_health"]
 		maximum_health = db_data["users"]["UID_123"]["progress"]["current_round"]["fort"]["core_stats"]["maximum_health"]
-		tier_number = db_data["users"]["UID_123"]["progress"]["current_round"]["fort"]["tier"]
+		tier_number = db_data["users"]["UID_123"]["progress"]["current_round"]["tier"]
 
 func take_damage(amount: int) -> void:
 	current_health -= amount

@@ -7,11 +7,11 @@
 				},
 				"current_round": {
 					"wave": 1,
+					"tier": 2,
 					"fort":{
-						"tier": 2,
 						"core_stats": {
 							"maximum_health": 100,
-							"current_health": 90,
+							"current_health":90,
 							"attack_cooldown": 1.0
 						}
 					}

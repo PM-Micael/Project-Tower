@@ -9,7 +9,7 @@
 size = Vector2(449, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q74e8"]
-size = Vector2(253.36519, 2.1253643)
+size = Vector2(198.07837, 3.8711991)
 
 [node name="Wall" type="StaticBody2D" groups=["Ally_Targetable_Structure"]]
 z_as_relative = false
@@ -30,6 +30,6 @@ scale = Vector2(1.7777779, 9.31558)
 script = ExtResource("2_q74e8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableWall"]
-position = Vector2(0.5966334, 5.7742e-07)
-scale = Vector2(0.99999964, 0.99999964)
+position = Vector2(0.39775202, 0.037953116)
+scale = Vector2(0.9999992, 0.9999993)
 shape = SubResource("RectangleShape2D_q74e8")

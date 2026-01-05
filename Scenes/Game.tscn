@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://0iqkb04oacik"]
+[gd_scene load_steps=15 format=3 uid="uid://0iqkb04oacik"]
 
 [ext_resource type="PackedScene" uid="uid://djkssdnxpx331" path="res://Scenes/Structures/core.tscn" id="3_7lihs"]
 [ext_resource type="Script" uid="uid://bd5vnub00s8ra" path="res://Scripts/Structures/fort.gd" id="3_b2bpf"]
@@ -9,8 +9,12 @@
 [ext_resource type="Script" uid="uid://c6vcjgdnd3p3x" path="res://Scripts/UI/counter_label.gd" id="9_bf53h"]
 [ext_resource type="Script" uid="uid://8d6w7ajsikx3" path="res://Scripts/UI/wave_counter_lablel.gd" id="10_71axn"]
 [ext_resource type="Script" uid="uid://bc7hdlku2ilwq" path="res://Scripts/UI/scrap_amount_label.gd" id="10_dahhg"]
+[ext_resource type="Script" uid="uid://cbntafw5oddsi" path="res://Scripts/UI/texture_progress_bar.gd" id="11_3cx6b"]
 [ext_resource type="Script" uid="uid://pmgyqavexbg0" path="res://Scripts/UI/selected_object_panel.gd" id="11_3so38"]
 [ext_resource type="Script" uid="uid://b286gxsuai4l6" path="res://Scripts/UI/tier_display_label.gd" id="11_dahhg"]
+[ext_resource type="Texture2D" uid="uid://b5rn8xbfreydq" path="res://Assets/Pixel.png" id="11_wxwew"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dahhg"]
 
 [node name="Game" type="Node2D"]
 
@@ -42,7 +46,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HealthLabel" type="Label" parent="Camera2D/HUD"]
+[node name="FortStats" type="Control" parent="Camera2D/HUD"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthLabel" type="Label" parent="Camera2D/HUD/FortStats"]
 layout_mode = 0
 offset_left = -1151.0
 offset_top = -642.0
@@ -52,7 +61,7 @@ theme_override_font_sizes/font_size = 100
 text = "Health"
 script = ExtResource("4_fgofq")
 
-[node name="CounterLabel" type="Label" parent="Camera2D/HUD"]
+[node name="CounterLabel" type="Label" parent="Camera2D/HUD/FortStats"]
 layout_mode = 0
 offset_left = -1149.0
 offset_top = -499.0
@@ -62,7 +71,7 @@ theme_override_font_sizes/font_size = 80
 text = "Timer"
 script = ExtResource("9_bf53h")
 
-[node name="WaveCounterLabel" type="Label" parent="Camera2D/HUD"]
+[node name="WaveCounterLabel" type="Label" parent="Camera2D/HUD/FortStats"]
 layout_mode = 0
 offset_left = -1152.0
 offset_top = -378.0
@@ -72,7 +81,7 @@ theme_override_font_sizes/font_size = 80
 text = "Wave"
 script = ExtResource("10_71axn")
 
-[node name="TierDisplayLabel" type="Label" parent="Camera2D/HUD"]
+[node name="TierDisplayLabel" type="Label" parent="Camera2D/HUD/FortStats"]
 layout_mode = 0
 offset_left = -1149.0
 offset_top = -255.0
@@ -82,7 +91,7 @@ theme_override_font_sizes/font_size = 80
 text = "Tier"
 script = ExtResource("11_dahhg")
 
-[node name="ScrapAmountLabel" type="Label" parent="Camera2D/HUD"]
+[node name="ScrapAmountLabel" type="Label" parent="Camera2D/HUD/FortStats"]
 layout_mode = 0
 offset_left = -1151.0
 offset_top = -160.0
@@ -91,6 +100,27 @@ offset_bottom = -50.0
 theme_override_font_sizes/font_size = 80
 text = "Scrap"
 script = ExtResource("10_dahhg")
+
+[node name="HealthBar" type="Node2D" parent="Camera2D/HUD/FortStats"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/HUD/FortStats/HealthBar"]
+position = Vector2(-812, 505)
+scale = Vector2(556, 31.999989)
+texture = ExtResource("11_wxwew")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/HUD/FortStats/HealthBar"]
+custom_minimum_size = Vector2(100, 10)
+offset_left = -1090.0
+offset_top = 488.99997
+offset_right = -990.0
+offset_bottom = 529.0
+scale = Vector2(5.559856, 0.8091111)
+mouse_filter = 2
+value = 100.0
+nine_patch_stretch = true
+texture_progress = SubResource("PlaceholderTexture2D_dahhg")
+tint_progress = Color(0.92156863, 0, 0, 1)
+script = ExtResource("11_3cx6b")
 
 [node name="SelectedObjectPanel" type="Control" parent="Camera2D/HUD"]
 anchors_preset = 0
