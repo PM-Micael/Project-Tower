@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2hsehfan75fy"]
+
+[ext_resource type="Script" uid="uid://fts8qu88e8ge" path="res://Scripts/decrease_button_script.gd" id="1_pxgbv"]
+[ext_resource type="Script" uid="uid://ce217vmauebqh" path="res://Scripts/increase_button_script.gd" id="2_iqoqt"]
+[ext_resource type="Script" uid="uid://dv167bfuppw5o" path="res://Scripts/value_selector_script.gd" id="3_dc77w"]
+
+[node name="ValueSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 466.0
+offset_top = 140.0
+offset_right = 666.0
+offset_bottom = 240.0
+
+[node name="Decrease" type="Button" parent="."]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 23.0
+offset_right = -12.0
+offset_bottom = 54.0
+text = "<"
+script = ExtResource("1_pxgbv")
+
+[node name="Increase" type="Button" parent="."]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 24.0
+offset_right = 208.0
+offset_bottom = 55.0
+text = ">"
+script = ExtResource("2_iqoqt")
+
+[node name="ValueLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 50
+text = "Tier: 99"
+script = ExtResource("3_dc77w")

@@ -104,8 +104,8 @@ script = ExtResource("10_dahhg")
 [node name="HealthBar" type="Node2D" parent="Camera2D/HUD/FortStats"]
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D/HUD/FortStats/HealthBar"]
-position = Vector2(-812, 505)
-scale = Vector2(556, 31.999989)
+position = Vector2(-812, 512)
+scale = Vector2(556, 45.999985)
 texture = ExtResource("11_wxwew")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/HUD/FortStats/HealthBar"]
@@ -113,7 +113,7 @@ custom_minimum_size = Vector2(100, 10)
 offset_left = -1090.0
 offset_top = 488.99997
 offset_right = -990.0
-offset_bottom = 529.0
+offset_bottom = 545.85254
 scale = Vector2(5.559856, 0.8091111)
 mouse_filter = 2
 value = 100.0
