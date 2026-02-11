@@ -10,8 +10,8 @@ var base_attack: int = 1
 var maximum_attack: int
 @onready var current_attack: int = maximum_attack
 
-var speed: float = 200.0
-var attack_cooldown: float = 1.0
+var speed: float = 200.0 * Global.game_speed
+var attack_cooldown: float = 1.0 / Global.game_speed
 
 #Other
 var scrap_drop_on_death: int = 2 # Placeholder

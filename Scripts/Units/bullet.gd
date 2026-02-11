@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
-@export var speed: float = 400.0
+@export var speed: float = 400.0 * Global.game_speed
 @export var damage: int = 1
 @export var stop_distance: float = 70.0
-@export var attack_cooldown: float = 1.0
 @export var target: Node2D
 
 func _physics_process(_delta: float) -> void:

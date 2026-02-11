@@ -83,7 +83,7 @@ func _counter(delta: float):
 	 
 	if in_prep_phase == false: # Wave countdown
 		if wave_countdown > 0.0:
-			wave_countdown -= delta
+			wave_countdown -= delta * Global.game_speed
 			title = "Wave duration"
 			counter = wave_countdown
 		else:
@@ -91,7 +91,7 @@ func _counter(delta: float):
 			in_prep_phase = true
 	else: # Prep phase countdown
 		if prep_phase_countdown > 0.0:
-			prep_phase_countdown -= delta
+			prep_phase_countdown -= delta * Global.game_speed
 			title = "Prep phase"
 			counter = prep_phase_countdown
 		else:

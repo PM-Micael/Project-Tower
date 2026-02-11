@@ -1,5 +1,7 @@
 extends Node
 
+var game_speed: float = 0.5
+
 func load_json(path: String) -> Dictionary:
 	var file := FileAccess.open(path, FileAccess.READ)
 	if not file:

@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 func _counter(delta: float):
 	if _round_handler_node.in_prep_phase == false:
 		if time_since_last_spawn > 0.0:
-			time_since_last_spawn -= delta
+			time_since_last_spawn -= delta * Global.game_speed
 			return
 		else:
 			time_since_last_spawn = spawn_cooldown

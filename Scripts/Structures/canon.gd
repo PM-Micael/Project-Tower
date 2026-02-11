@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var attack_cooldown: float = 0.5
+@export var attack_cooldown: float = 0.5 / Global.game_speed
 @export var bullet_scene: PackedScene
 @export var core_scene: StaticBody2D # Draged currently
 

@@ -12,7 +12,6 @@ func set_value(new_tier_value: int) -> void:
 
 func _update_text():
 	text = "Tier: " + str(tier_value)
-	print("Updated = " + text)
 
 func increment(amount: int = 1) -> void:
 	set_value(tier_value + amount)
