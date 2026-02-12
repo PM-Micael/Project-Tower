@@ -16,6 +16,8 @@ func create_scene():
 	if value_selector_scene:
 		var value_selector_instance = value_selector_scene.instantiate()
 		
+		value_selector_instance.position = Vector2(1075, 1200)
+
 		value_selector_instance.label_text_key = label_text_key
 		value_selector_instance.label_text_value = label_text_value
 		value_selector_instance.label_iterations = label_iterations

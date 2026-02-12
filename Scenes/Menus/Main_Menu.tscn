@@ -15,7 +15,6 @@ script = ExtResource("1_d77ou")
 value_selector_scene = ExtResource("3_invnu")
 label_text_key = "Tier: "
 label_text_value = " 1"
-label_is_int = true
 label_iterations = [1, 2, 3, 4, 5]
 
 [node name="PlayButton" type="Button" parent="."]
