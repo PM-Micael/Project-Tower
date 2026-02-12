@@ -34,4 +34,5 @@
 	- Make so you can choose tier in main menu.
 
 2026-12-28
-	- Implement game speed
+	- Make the ValueSelector generic:
+		- The Value selector node shall have a script that spawns in the proper value label and potential buttons

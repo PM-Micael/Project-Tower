@@ -2,6 +2,10 @@ extends Node
 
 var game_speed: float = 0.5
 
+func create_node(parent: Node, child_node: PackedScene) -> void:
+	var new_child = child_node.instantiate()
+	parent.add_child(new_child)
+
 func load_json(path: String) -> Dictionary:
 	var file := FileAccess.open(path, FileAccess.READ)
 	if not file:

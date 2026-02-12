@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://0iqkb04oacik"]
+[gd_scene load_steps=18 format=3 uid="uid://0iqkb04oacik"]
 
 [ext_resource type="Script" uid="uid://v5x1q8mfebrk" path="res://Scenes/game.gd" id="1_wxwew"]
 [ext_resource type="PackedScene" uid="uid://djkssdnxpx331" path="res://Scenes/Structures/core.tscn" id="3_7lihs"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://csctngf5o2avw" path="res://Scripts/UI/health_label.gd" id="4_fgofq"]
 [ext_resource type="PackedScene" uid="uid://ddmuxee43qsb1" path="res://Scenes/round_handler.tscn" id="5_bf53h"]
 [ext_resource type="PackedScene" uid="uid://ddkv70duynxc" path="res://Scenes/Structures/wall.tscn" id="6_fgofq"]
+[ext_resource type="PackedScene" uid="uid://c2hsehfan75fy" path="res://Scenes/Menus/ValueSelector/value_selector.tscn" id="7_acvyw"]
+[ext_resource type="Script" uid="uid://bcyq083nnc84t" path="res://Scripts/UI/hud.gd" id="7_alh3a"]
 [ext_resource type="Script" uid="uid://c6vcjgdnd3p3x" path="res://Scripts/UI/counter_label.gd" id="9_bf53h"]
 [ext_resource type="Script" uid="uid://8d6w7ajsikx3" path="res://Scripts/UI/wave_counter_lablel.gd" id="10_71axn"]
 [ext_resource type="Script" uid="uid://bc7hdlku2ilwq" path="res://Scripts/UI/scrap_amount_label.gd" id="10_dahhg"]
@@ -45,65 +47,72 @@ zoom = Vector2(0.5, 0.5)
 [node name="HUD" type="Control" parent="Camera2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -1152.0
+offset_top = -648.0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("7_alh3a")
+value_selector_scene = ExtResource("7_acvyw")
+label_text_key = "x"
+label_text_value = "1"
+label_iterations = [1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5]
 
 [node name="FortStats" type="Control" parent="Camera2D/HUD"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 2304.0
+offset_bottom = 1296.0
 
 [node name="HealthLabel" type="Label" parent="Camera2D/HUD/FortStats"]
 layout_mode = 0
-offset_left = -1151.0
-offset_top = -642.0
-offset_right = -770.0
-offset_bottom = -505.0
-theme_override_font_sizes/font_size = 100
+offset_left = 30.0
+offset_right = 411.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 80
 text = "Health"
 script = ExtResource("4_fgofq")
 
 [node name="CounterLabel" type="Label" parent="Camera2D/HUD/FortStats"]
 layout_mode = 0
-offset_left = -1149.0
-offset_top = -499.0
-offset_right = -768.0
-offset_bottom = -362.0
+offset_left = 30.0
+offset_top = 150.0
+offset_right = 411.0
+offset_bottom = 287.0
 theme_override_font_sizes/font_size = 80
 text = "Timer"
 script = ExtResource("9_bf53h")
 
 [node name="WaveCounterLabel" type="Label" parent="Camera2D/HUD/FortStats"]
 layout_mode = 0
-offset_left = -1152.0
-offset_top = -378.0
-offset_right = -699.0
-offset_bottom = -268.0
+offset_left = 30.0
+offset_top = 300.0
+offset_right = 483.0
+offset_bottom = 410.0
 theme_override_font_sizes/font_size = 80
 text = "Wave"
 script = ExtResource("10_71axn")
 
 [node name="TierDisplayLabel" type="Label" parent="Camera2D/HUD/FortStats"]
 layout_mode = 0
-offset_left = -1149.0
-offset_top = -255.0
-offset_right = -1001.0
-offset_bottom = -145.0
+offset_left = 30.0
+offset_top = 450.0
+offset_right = 178.0
+offset_bottom = 560.0
 theme_override_font_sizes/font_size = 80
 text = "Tier"
 script = ExtResource("11_dahhg")
 
 [node name="ScrapAmountLabel" type="Label" parent="Camera2D/HUD/FortStats"]
 layout_mode = 0
-offset_left = -1151.0
-offset_top = -160.0
-offset_right = -937.0
-offset_bottom = -50.0
+offset_left = 30.0
+offset_top = 600.0
+offset_right = 244.0
+offset_bottom = 710.0
 theme_override_font_sizes/font_size = 80
 text = "Scrap"
 script = ExtResource("10_dahhg")
 
 [node name="HealthBar" type="Node2D" parent="Camera2D/HUD/FortStats"]
+position = Vector2(1152, 648)
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D/HUD/FortStats/HealthBar"]
 position = Vector2(-812, 512)
@@ -126,10 +135,10 @@ script = ExtResource("11_3cx6b")
 
 [node name="SelectedObjectPanel" type="Control" parent="Camera2D/HUD"]
 anchors_preset = 0
-offset_left = -586.0
-offset_top = 51.999992
-offset_right = -546.0
-offset_bottom = 91.99999
+offset_left = 282.0
+offset_top = 725.0
+offset_right = 322.0
+offset_bottom = 765.0
 scale = Vector2(10.743175, 8.9970665)
 script = ExtResource("11_3so38")
 

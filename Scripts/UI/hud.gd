@@ -1,4 +1,4 @@
-extends Control   # or whatever your root node is
+extends Control
 
 @export_category("Tier Selector")
 
@@ -9,7 +9,7 @@ extends Control   # or whatever your root node is
 @export var label_text_value: String ## placeholder value
 @export var label_iterations: Array
 
-func _enter_tree() -> void:
+func _ready() -> void:
 	create_scene()
 
 func create_scene():
@@ -21,3 +21,5 @@ func create_scene():
 		value_selector_instance.label_iterations = label_iterations
 		
 		add_child(value_selector_instance)
+	else:
+		push_error("value_selector_scene is null")
