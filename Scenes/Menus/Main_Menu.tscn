@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d27x86bs35jyi"]
+[gd_scene load_steps=5 format=3 uid="uid://d27x86bs35jyi"]
 
 [ext_resource type="Script" uid="uid://c12st0ktyn1sx" path="res://Scripts/UI/main_menu.gd" id="1_d77ou"]
 [ext_resource type="PackedScene" uid="uid://c2hsehfan75fy" path="res://Scenes/Menus/ValueSelector/value_selector.tscn" id="3_invnu"]
-[ext_resource type="Script" uid="uid://q75jte3txq22" path="res://Scripts/scene_selector_button_script.gd" id="4_d77ou"]
+[ext_resource type="Script" uid="uid://q75jte3txq22" path="res://Scripts/UI/scene_selector_button_script.gd" id="4_d77ou"]
+[ext_resource type="Script" uid="uid://cfxt3yuvx2god" path="res://Scenes/Menus/debug_button.gd" id="4_invnu"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -26,3 +27,13 @@ theme_override_font_sizes/font_size = 50
 text = "Play"
 script = ExtResource("4_d77ou")
 _scene_path = "res://Scenes/Game.tscn"
+
+[node name="Debug" type="Button" parent="."]
+layout_mode = 0
+offset_left = 873.0
+offset_top = 48.0
+offset_right = 1115.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 50
+text = "Debug"
+script = ExtResource("4_invnu")

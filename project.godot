@@ -17,7 +17,11 @@ config/icon="res://Assets/icon.svg"
 
 [autoload]
 
-Global="*res://Scripts/Global.gd"
+Global="*res://Scripts/Globals/Global.gd"
+Database="*res://Scripts/Globals/database.gd"
+Auth="*res://Scripts/Globals/auth.gd"
+User="*res://Scripts/Globals/user.gd"
+EmailAuth="*res://Scripts/Globals/email_auth.gd"
 
 [display]
 

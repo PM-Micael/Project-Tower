@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2hsehfan75fy"]
 
-[ext_resource type="Script" uid="uid://bdthsokvmra8t" path="res://Scripts/value_selector_script.gd" id="1_2qej8"]
-[ext_resource type="Script" uid="uid://fts8qu88e8ge" path="res://Scripts/decrease_button_script.gd" id="1_pxgbv"]
-[ext_resource type="Script" uid="uid://ce217vmauebqh" path="res://Scripts/increase_button_script.gd" id="2_iqoqt"]
+[ext_resource type="Script" uid="uid://bdthsokvmra8t" path="res://Scripts/UI/value_selector_script.gd" id="1_2qej8"]
+[ext_resource type="Script" uid="uid://fts8qu88e8ge" path="res://Scripts/UI/decrease_button_script.gd" id="1_pxgbv"]
+[ext_resource type="Script" uid="uid://ce217vmauebqh" path="res://Scripts/UI/increase_button_script.gd" id="2_iqoqt"]
 [ext_resource type="PackedScene" uid="uid://ukhiubkhie3k" path="res://Scenes/Menus/ValueSelector/Child Nodes/value_label.tscn" id="4_2qej8"]
 
 [node name="ValueSelector" type="Control"]

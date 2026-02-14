@@ -9,6 +9,7 @@ extends Control   # or whatever your root node is
 @export var label_text_value: String ## placeholder value
 @export var label_iterations: Array
 
+
 func _enter_tree() -> void:
 	create_scene()
 

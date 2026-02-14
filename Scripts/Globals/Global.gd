@@ -1,6 +1,6 @@
 extends Node
 
-var game_speed: float = 0.5
+var game_speed: float = 1
 
 func create_node(parent: Node, child_node: PackedScene) -> void:
 	var new_child = child_node.instantiate()

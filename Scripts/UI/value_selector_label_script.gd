@@ -22,7 +22,6 @@ func set_value(new_index: int) -> void:
 	_update_text()
 
 func _update_text():
-	print("label iterations in selector label = " + str(iterations.size()))
 	text = text_key + str(iterations[iteration_index])
 
 func increment() -> void:

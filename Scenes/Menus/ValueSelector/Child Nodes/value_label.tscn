@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ukhiubkhie3k"]
 
-[ext_resource type="Script" uid="uid://dv167bfuppw5o" path="res://Scripts/value_selector_label_script.gd" id="1_lpy2h"]
+[ext_resource type="Script" uid="uid://dv167bfuppw5o" path="res://Scripts/UI/value_selector_label_script.gd" id="1_lpy2h"]
 
 [node name="ValueLabel" type="Label"]
 offset_right = 40.0
